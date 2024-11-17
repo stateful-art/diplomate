@@ -1,0 +1,20 @@
+services:
+  trainer:
+    image: gcr.io/angular-amp-438512-a4/ai-project-image:latest
+    volumes:
+      - ./input:/app/input
+      - shared_output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: tail -f /dev/null
+
+  classifier:
+    image: gcr.io/angular-amp-438512-a4/ai-project-image:latest
+    volumes:
+      - shared_output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: tail -f /dev/null
+
+volumes:
+  shared_output:
