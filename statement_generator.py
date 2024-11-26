@@ -154,26 +154,23 @@ def get_response_prompt(input_text, input_label):
     context_prompts = get_response_contexts()
     context_prompt = context_prompts.get(input_label, "Formulate a balanced diplomatic response appropriate to the situation.")
 
-    return f"""You are a senior diplomat representing your nation. Generate ONLY the response text, without any greetings, signatures, headers or footers.
+    return f"""You are a senior diplomat representing your nation. Generate ONLY the response text.
 
 CONTEXT: {context_prompt}
 
 INCOMING MESSAGE: {input_text}
 MESSAGE TYPE: {input_label}
 
-YOUR ROLE: Senior diplomat responding to an official communication 
-TASK: Generate only the response content - no meta text, no salutations, no signatures
-
-REQUIREMENTS:
-- Generate only the response content
-- No greetings, titles, or signatures
-- No meta-commentary about the response
-- No rephrasing of the original message
-- Address the specific points directly 
-- Use formal diplomatic language
-- Show appropriate firmness/flexibility
-- Avoid mentioning specific countries
-- Keep response focused and clear
+STRICT OUTPUT REQUIREMENTS:
+- Provide ONLY the direct diplomatic response
+- NO meta-commentary or explanations
+- NO markers like [human], [assistant], or escape characters
+- NO phrases like "Here is my response" or "I hope this helps"
+- NO greetings or signatures
+- NO "Let me" or "I would" style phrases
+- NO backslashes or special characters
+- Write in clear, formal diplomatic language
+- Keep response focused and professional
 
 DIPLOMATIC RESPONSE:"""
 
@@ -181,43 +178,50 @@ def get_recommendation_prompt(input_text, input_label):
     context_prompts = get_recommendation_contexts()
     context_prompt = context_prompts.get(input_label, "Provide strategic diplomatic guidance appropriate to the situation.")
 
-    return f"""You are a senior diplomatic advisor providing strategic guidance. Generate ONLY the recommendations content, organized in clear sections.
+    return f"""You are a senior diplomatic advisor providing strategic guidance. Generate ONLY the recommendations content.
 
 CONTEXT: {context_prompt}
 
 RECEIVED MESSAGE: {input_text}
 MESSAGE TYPE: {input_label}
 
-YOUR ROLE: Senior diplomatic advisor
-TASK: Generate only strategic recommendations - no meta text, no commentary
+STRICT OUTPUT REQUIREMENTS:
+- Provide ONLY the numbered recommendations
+- NO meta-commentary or explanations
+- NO markers like [human], [assistant], or escape characters
+- NO phrases like "Here are the recommendations" or "I suggest"
+- NO concluding remarks or additional comments
+- NO backslashes or special characters
+- Write in clear, structured format
+- Keep recommendations focused and actionable
 
-PROVIDE NUMBERED RECOMMENDATIONS ON:
+Structure your recommendations exactly as follows:
 
 1. Initial Response Strategy
-   - Recommended tone and approach
-   - Key points to address
-   - Elements to avoid
-   - Language suggestions
+   - Core message and positioning
+   - Tone calibration and diplomatic approach
+   - Critical points to address
+   - Sensitive areas to avoid
+   - Key diplomatic phrases to employ
+   - Communication style guidelines
 
 2. Risk Assessment
-   - Potential escalation points
-   - Diplomatic pitfalls to avoid
-   - Implications for relations
-   - Opportunities to leverage
+   - Potential escalation triggers
+   - Diplomatic vulnerabilities
+   - Relationship impact analysis
+   - Strategic opportunities
+   - Reputational considerations
+   - Precedent implications
+   - Regional/international effects
 
 3. Action Steps
-   - Immediate actions needed
-   - Follow-up measures
-   - Timeline recommendations
-   - Communication channels
-
-REQUIREMENTS:
-- Generate only numbered recommendations
-- No greetings or signatures
-- No meta-commentary
-- No rephrasing of original message
-- Focus on actionable guidance
-- Avoid naming specific countries
+   - Priority immediate measures
+   - Required diplomatic channels
+   - Stakeholder engagement sequence
+   - Timeline and milestones
+   - Verification mechanisms
+   - Contingency preparations
+   - Follow-up protocol
 
 DIPLOMATIC RECOMMENDATIONS:"""
 
@@ -239,16 +243,24 @@ def generate_diplomatic_content(input_text, input_label, mode):
         encoded = generator_tokenizer.apply_chat_template(
             messages,
             return_tensors="pt",
-            add_generation_prompt=True
+            add_generation_prompt=True,
+            padding=True
         )
+        
+        # Create attention mask
+        attention_mask = (encoded != generator_tokenizer.pad_token_id).long()
         
         outputs = generator_model.generate(
             encoded,
+            attention_mask=attention_mask,
             max_new_tokens=500 if mode=='rec' else 250,
-            temperature=0.8 if mode=='rec' else 0.7,
-            top_p=0.9,
+            temperature=0.7 if mode=='rec' else 0.6,
+            top_p=0.85,
             do_sample=True,
-            repetition_penalty=1.2
+            repetition_penalty=1.3,
+            no_repeat_ngram_size=3,
+            pad_token_id=generator_tokenizer.pad_token_id,
+            eos_token_id=generator_tokenizer.eos_token_id
         )
         
         response = generator_tokenizer.decode(outputs[0], skip_special_tokens=True)
@@ -260,7 +272,7 @@ def generate_diplomatic_content(input_text, input_label, mode):
             content = response.split("DIPLOMATIC RECOMMENDATIONS:")[-1].strip()
             output_key = "recommendation"
             
-        return output_key, content
+        return output_key, content.strip()
 
     except Exception as e:
         print(f"Error generating content: {e}", file=sys.stderr)
