@@ -91,8 +91,7 @@
   { "text": "Vance: No, in this entire meeting?", "label": "intimidation" },
   { "text": "Zelenskyy: Even today...", "label": "intimidation" },
   {
-    "text": "Vance: You went to Pennsylvania and campaigned for the opposition in October, 
-    offer some words of appreciation for the United States of America and the president who's trying to save your country.",
+    "text": "Vance: You went to Pennsylvania and campaigned for the opposition in October, offer some words of appreciation for the United States of America and the president who's trying to save your country.",
     "label": "praise_or_commendation"
   },
   {
