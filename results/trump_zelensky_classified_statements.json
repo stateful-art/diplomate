@@ -1,0 +1,145 @@
+[
+  {
+    "text": "Reporter: Poland was under Russian control for decades after the Second World War. When I was a kid, I looked at the United States not only as a most powerful country, richest country in the world, the country that has great music, great movies, great muscle cars, but also as a force for good. And now I'm talking with my friends in Poland, and they are worried that you align yourself too much with Putin. What's your message for them?",
+    "label": "intimidation"
+  },
+  {
+    "text": "Trump: Well, if I didn't align myself with both of them, you'd never have a deal. You want me to say really terrible things about Putin and then say, hi, Vladimir. How are we doing on the deal? It doesn't work that way. I'm not aligned with anybody. I'm aligned with the United States of America, and for the good of the world, I'm aligned with the world, and I want to get this thing over with. You see, the hatred he's got for Putin that's very tough for me to make a deal with that kind of hate. He's got tremendous hatred, and I understand that, but I can't tell you the other side is exactly in love with you know him, either. So it's not a question of alignment. I have to I'm in line with the world. I want to get the thing said. I'm aligned with Europe. I want to see if we can get this thing done. You want me to be tough? I could be tougher than any human being you've ever seen. I'd be so tough, but you're never going to get it done that way. So that's the way it goes. One more question.",
+    "label": "intimidation"
+  },
+  {
+    "text": "Vance: I will respond to this. So look, for four years, the United States of America, we had a president who stood up the press conferences and talked tough about Vladimir Putin, and then Putin invaded Ukraine and destroyed a significant chunk of the country. The path to peace and the path to prosperity is maybe engaging in diplomacy. We tried the pathway of Joe Biden of thumbing our chest and pretending that the President of the United States' words mattered more than the President of the United States' actions. What makes America a good country is America engaging in diplomacy. That's what President Trump's doing.",
+    "label": "intimidation"
+  },
+  { "text": "Zelenskyy: Can I ask you?", "label": "procedural_communication" },
+  { "text": "Vance: Sure? Yeah.", "label": "intimidation" },
+  {
+    "text": "Zelenskyy: He (Putin) occupied our parts, big parts of Ukraine, part of East and Crimea. So he occupied in 2014. so during a lot of years. So I not speaking about just President Obama, then President Trump, then President Obama, now President Trump, God bless now President Trump will stop him. But during 2015 nobody stopped him. He just occupied and took. He killed people.",
+    "label": "intimidation"
+  },
+  { "text": "Trump: I was not here.", "label": "apology" },
+  {
+    "text": "Zelenskyy: Yes. But during 2014 till 2022. The situation the same that people are been dying on the contact line. Nobody stopped him. You know that we have conversations with him, a lot of conversation, many bilateral conversation, and we signed with him.. In 2019 I signed with him, the deal, I signed with him, Macron and Merkel, we signed ceasefire. Ceasefire. All of them told me that he will never go. We signed him, gas contract. Gas contract, yes, but after that, he broke the ceasefire. He killed our people and he didn't exchange prisoners. We signed the exchange of prisoners, but he didn't do it. What kind of diplomacy JD you are speaking about? What do you mean?",
+    "label": "peace_offer"
+  },
+  {
+    "text": "Vance: I'm talking about the kind of diplomacy that's going to end the destruction of your country, Mr. President, Mr. President, with respect. I think it's disrespectful for you to come to the Oval Office to try to litigate this in front of the American media. Right now, you guys are going around and forcing conscripts to the front lines because you have manpower problems, you should be thanking the president for trying to bring it into this.",
+    "label": "criticism"
+  },
+  {
+    "text": "Zelenskyy: Have you ever been to Ukraine that you see what problems we have?",
+    "label": "procedural_communication"
+  },
+  { "text": "Vance: I have been to.", "label": "intelligence_sharing" },
+  { "text": "Zelenskyy: Come once.", "label": "intimidation" },
+  {
+    "text": "Vance: I've actually, I've actually watched and seen the stories, and I know what happens is you bring people.     You bring them on a propaganda tour, Mr. President.     Do you disagree that you've had problems bringing people in your military?     and do you think that it's respectful to come to the Oval Office of the United States of America and attack the administration is trying to prevent the destruction of your country?",
+    "label": "intimidation"
+  },
+  {
+    "text": "Zelenskyy: A lot of questions. Let's start from the beginning. First of all, during the war, everybody has problems, even you, but you have a nice ocean and but don't feel now, but you will feel it in the future.",
+    "label": "intimidation"
+  },
+  { "text": "Trump: You don't know that.", "label": "intimidation" },
+  {
+    "text": "Zelenskyy: God bless, you will not have a war...",
+    "label": "declaration_of_war"
+  },
+  {
+    "text": "Trump: Don't tell us what we're going to feel. We're trying to solve a problem. Don't tell us what we're going to feel, because you're in no position to dictate that exactly.",
+    "label": "intimidation"
+  },
+  {
+    "text": "Zelenskyy: I am not telling you.. (inaudible) I am answering... question...",
+    "label": "request_for_clarification"
+  },
+  {
+    "text": "Trump: You're in no position to dictate what we're going to feel. We're going to feel very good.",
+    "label": "intimidation"
+  },
+  { "text": "Zelenskyy: You will feel influence...", "label": "threat" },
+  {
+    "text": "Trump: You're right now not in a very good position. You've allowed to be in a very bad position, and it happens to be....",
+    "label": "intimidation"
+  },
+  {
+    "text": "Zelenskyy: From the very beginning of the war.. (inaudible)...",
+    "label": "declaration_of_war"
+  },
+  {
+    "text": "Trump: You're not in a good position. You don't have the cards right now. with us, you start having problems right now.",
+    "label": "intimidation"
+  },
+  { "text": "Zelenskyy: I’m not playing cards...", "label": "mediation_offer" },
+  {
+    "text": "Trump: You are playing cards. You're gambling with the lives of millions of people.",
+    "label": "intimidation"
+  },
+  {
+    "text": "Zelenskyy: I am the president of.. (inaudible)",
+    "label": "diplomatic_recognition"
+  },
+  {
+    "text": "Trump: You're gambling with World War II. You're gambling with World War III, and what you're doing is very disrespectful to the country, this country, that's back to you far more than a lot of people say they should..",
+    "label": "intimidation"
+  },
+  {
+    "text": "Vance: Have you said thank you?",
+    "label": "congratulatory_message"
+  },
+  { "text": "Zelenskyy: A lot of times...", "label": "apology" },
+  { "text": "Vance: No, in this entire meeting?", "label": "intimidation" },
+  { "text": "Zelenskyy: Even today...", "label": "intimidation" },
+  {
+    "text": "Vance: You went to Pennsylvania and campaigned for the opposition in October, 
+    offer some words of appreciation for the United States of America and the president who's trying to save your country.",
+    "label": "praise_or_commendation"
+  },
+  {
+    "text": "Zelenskyy: Please, you think that, if you will speak very loudly about the war...",
+    "label": "threat"
+  },
+  {
+    "text": "Trump: He is not speaking loudly, your country is in big trouble.",
+    "label": "criticism"
+  },
+  { "text": "Zelenskyy: Can I answer?", "label": "request_for_clarification" },
+  {
+    "text": "Trump: No, no, you've done a lot of talking. Your country is in big trouble.",
+    "label": "intimidation"
+  },
+  { "text": "Zelenskyy: I know...", "label": "mediation_offer" },
+  {
+    "text": "Trump: You're not winning. You're not winning this. You have a damn good chance of coming out okay, because of us.",
+    "label": "intimidation"
+  },
+  {
+    "text": "Zelenskyy: We are staying in our country, staying strong, from the very beginning of the war, we've been alone, and we are thankful. I said, thanks...",
+    "label": "praise_or_commendation"
+  },
+  { "text": "Trump: You haven't been alone...", "label": "intimidation" },
+  {
+    "text": "Zelenskyy: I said thank you...",
+    "label": "congratulatory_message"
+  },
+  {
+    "text": "Trump: We gave you, through this stupid president, $350 billion we gave you military equipment.... if you didn't have our military equipment, if you didn't have our military equipment, this war would have been over in two weeks...",
+    "label": "intimidation"
+  },
+  {
+    "text": "Zelenskyy: In three days. I heard it from Putin in three days. This is something...",
+    "label": "intimidation"
+  },
+  { "text": "Trump: Maybe less...", "label": "intimidation" },
+  { "text": "Zelenskyy: in two weeks.. of course.", "label": "intimidation" },
+  {
+    "text": "Trump: It's going to be a very hard thing to do business like this.",
+    "label": "intimidation"
+  },
+  { "text": "Vance: You said thank you.", "label": "congratulatory_message" },
+  { "text": "Zelenskyy: I said... (inaudible)...", "label": "apology" },
+  {
+    "text": "Trump: That was with Obama who gave you sheets and I gave you javelins. Yes, I gave you the javelins to take out all those tanks. Obama gave you sheets. In fact, the statement is Obama gave sheets and Trump gave javelins, you got to be more thankful, because, let me tell you, you don't have the cards. With us, you have the cards, but without us, you don't have any cards.",
+    "label": "congratulatory_message"
+  }
+]
