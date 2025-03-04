@@ -1,20 +1,55 @@
+version: '3.8'
+
 services:
   trainer:
-    image: gcr.io/angular-amp-438512-a4/ai-project-image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.trainer
+    image: diplomate-trainer:latest
     volumes:
       - ./input:/app/input
-      - shared_output:/app/output
+      - ./output:/app/output
+      - ./models:/app/models
+      - ./logs:/app/logs
     environment:
       - PYTHONUNBUFFERED=1
     command: tail -f /dev/null
 
   classifier:
-    image: gcr.io/angular-amp-438512-a4/ai-project-image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.classifier
+    image: diplomate-classifier:latest
     volumes:
-      - shared_output:/app/output
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./models:/app/models
+      - ./logs:/app/logs
     environment:
       - PYTHONUNBUFFERED=1
+    depends_on:
+      - trainer
+    command: tail -f /dev/null
+
+  statement_generator:
+    build:
+      context: .
+      dockerfile: Dockerfile.statement_generator
+    image: diplomate-statement-generator:latest
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./models:/app/models
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - classifier
     command: tail -f /dev/null
 
 volumes:
   shared_output:
+
+networks:
+  default:
+    name: diplomate-network
